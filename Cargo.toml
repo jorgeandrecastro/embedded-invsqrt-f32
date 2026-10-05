@@ -1,0 +1,21 @@
+[package]
+name = "embedded-invsqrt-f32"
+version = "0.1.0"
+edition = "2024"
+authors = ["Jorge Andre Castro <georgeandrec@gmail.com>"]
+license = "GPL-2.0-or-later"
+description = "Inverse de racine carrée f32 rapide pour no_std embarqué, testée sur Cortex-M33/M4F"
+repository = "https://github.com/jorgeandrecastro/embedded-invsqrt-f32"
+documentation = "https://docs.rs/embedded-invsqrt-f32"
+readme = "README.md"
+keywords = ["invsqrt", "math", "no-std", "embedded", "f32"]
+categories = ["mathematics", "no-std", "embedded"]
+
+[dependencies]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
